@@ -8,6 +8,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import Input from "@/app/components/inputs/Input";
 import Button from "@/app/components/Button";
+import AuthSocialButton from "./AuthSocialButton";
 
 // import Input from "@/app/components/inputs/Input";
 // import AuthSocialButton from "./AuthSocialButton";
@@ -89,21 +90,21 @@ const AuthForm = () => {
     }
   };
 
-  //   const socialAction = (action: string) => {
-  //     setIsLoading(true);
+  const socialAction = (action: string) => {
+    setIsLoading(true);
 
-  //     signIn(action, { redirect: false })
-  //       .then((callback) => {
-  //         if (callback?.error) {
-  //           toast.error("Invalid credentials!");
-  //         }
+    // signIn(action, { redirect: false })
+    //   .then((callback) => {
+    //     if (callback?.error) {
+    //       toast.error("Invalid credentials!");
+    //     }
 
-  //         if (callback?.ok) {
-  //           router.push("/conversations");
-  //         }
-  //       })
-  //       .finally(() => setIsLoading(false));
-  //   };
+    //     if (callback?.ok) {
+    //       router.push("/conversations");
+    //     }
+    //   })
+    //   .finally(() => setIsLoading(false));
+  };
 
   return (
     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -173,14 +174,14 @@ const AuthForm = () => {
           </div>
 
           <div className="mt-6 flex gap-2">
-            {/* <AuthSocialButton
+            <AuthSocialButton
               icon={BsGithub}
               onClick={() => socialAction("github")}
             />
             <AuthSocialButton
               icon={BsGoogle}
               onClick={() => socialAction("google")}
-            /> */}
+            />
           </div>
         </div>
         <div
